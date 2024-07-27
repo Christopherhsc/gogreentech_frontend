@@ -8,6 +8,7 @@ import { ResponsiveService } from './shared/services/responsive.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { AboutComponent } from "./consumers/components/about/about.component";
 import { PropertyOwnerComponent } from "./consumers/components/property-owner/property-owner.component";
+import { InstallersComponent } from "./consumers/components/installers/installers.component";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { PropertyOwnerComponent } from "./consumers/components/property-owner/pr
     LandingPageDesktopComponent,
     AsyncPipe,
     AboutComponent,
-    PropertyOwnerComponent
+    PropertyOwnerComponent,
+    InstallersComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
