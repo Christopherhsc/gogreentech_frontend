@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glassmorphism-container {
+  @apply bg-opacity-5 shadow-lg backdrop-blur-md backdrop-filter;
+}
+
+.glassmorphism-header {
+  @apply border-b-2 bg-slate-700 font-semibold text-white drop-shadow-2xl;
+}
+
+.glassmorphism-button{
+  @apply text-gray-300 hover:text-white hover:cursor-pointer
+}
+
+.primary-color {
+  color: #8fbf3c;
+}
+
+.secondary-color {
+  color: #0c78be;
+}

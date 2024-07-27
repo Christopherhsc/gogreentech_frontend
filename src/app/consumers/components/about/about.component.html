@@ -1,0 +1,28 @@
+<div
+  class="relative min-h-96 w-full overflow-hidden bg-gradient-to-b from-white via-gray-300 to-gray-500"
+>
+  <div
+    class="text-primary-color mx-auto my-4 flex w-full items-center justify-center text-xl font-extrabold md:my-6 md:text-3xl xl:my-12 xl:text-5xl"
+  >
+    - Om GoGreenTech -
+  </div>
+  <div
+    class="mx-auto flex h-full w-full flex-col items-center justify-center 2xl:w-2/3"
+  >
+    <div class="flex h-1/2 flex-col items-center">
+      <div class="progress-bar-container absolute bottom-0 h-1 w-full bg-black">
+        <div class="progress-bar bg-primary-color h-full"></div>
+      </div>
+      <div
+        class="relative flex w-full flex-col items-center space-y-6 p-4 text-center text-lg font-bold text-gray-900 transition-opacity duration-1000 ease-in-out md:text-2xl 2xl:w-1/2 xl:text-3xl"
+      >
+        <p
+          *ngFor="let paragraph of paragraphs; let i = index"
+          [class.hidden]="i !== currentParagraphIndex"
+        >
+          {{ paragraph }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

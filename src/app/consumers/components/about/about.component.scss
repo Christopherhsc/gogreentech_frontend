@@ -1,0 +1,34 @@
+.about {
+  background-image: url(/assets/gogreentech_logo_greyscale.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0;
+  animation: progress 10s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

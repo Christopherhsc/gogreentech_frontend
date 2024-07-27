@@ -1,0 +1,32 @@
+<!-- Desktop Nav -->
+<nav
+  *ngIf="!isMobile"
+  class="glassmorphism-header details z-50 h-24 w-full px-2"
+>
+  <div class="flex h-full flex-row justify-between">
+    <div id="logo" class="gogreentech-logo flex flex-row items-center">
+      <img class="h-32 w-auto" src="/assets/gogreentech_logo.png" alt="logo" />
+      <div class="flex flex-col pl-4">
+        <p class="text-5xl font-extrabold">GoGreenTech</p>
+        <p class="primary-color text-3xl font-bold">TECH FOR THE CLIMATE</p>
+      </div>
+    </div>
+    <div class="flex flex-row items-center space-x-12 px-4 text-3xl">
+      <p class="glassmorphism-button">Hjem</p>
+      <p class="glassmorphism-button">Ejendomsejere</p>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<nav *ngIf="isMobile" class="glassmorphism-header z-50 h-16 w-full px-2">
+  <div class="h-full">
+    <div id="logo" class="gogreentech-logo flex flex-row items-center">
+      <img class="h-16 w-auto" src="/assets/gogreentech_logo.png" alt="logo" />
+      <div class="flex flex-col pl-4">
+        <p class="text-xl font-extrabold">GoGreenTech</p>
+        <p class="primary-color text-lg font-bold">TECH FOR THE CLIMATE</p>
+      </div>
+    </div>
+  </div>
+</nav>

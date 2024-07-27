@@ -1,0 +1,27 @@
+<div id="landingPageDesktop" class="overflow-hidden text-white">
+  <div class="relative flex h-full w-screen items-center justify-center">
+    <div
+      class="parent-div relative m-2 flex h-4/5 w-2/3 items-center justify-center rounded-2xl"
+    >
+      <canvas
+        class="canvas-container h-full w-full cursor-pointer"
+        id="earthCanvas"
+        #earthCanvas
+      ></canvas>
+      <div
+        class="absolute inset-0 z-10 backdrop-blur-md backdrop-filter transition-opacity duration-500"
+        id="backdrop"
+        style="pointer-events: none"
+      ></div>
+      <div
+        class="pointer-events-none absolute inset-0 z-20 flex select-none flex-col items-center justify-center rounded-xl text-center font-bold transition-opacity duration-500"
+        id="overlay"
+      >
+        <p class="text-5xl text-white drop-shadow-2xl">Gogreentech</p>
+        <p class="text-2xl text-white">
+          betaler ejendomsejere husleje, uden at optage indendørs plads
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
