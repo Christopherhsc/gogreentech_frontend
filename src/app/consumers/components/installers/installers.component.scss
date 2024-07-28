@@ -1,0 +1,28 @@
+.installers {
+  position: relative;
+  z-index: 0;
+}
+
+.installers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: url("/assets/gogreentech_logo_greyscale.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+@media (min-width: 1280px) {
+  .block {
+    display: none;
+  }
+  .hidden {
+    display: flex;
+  }
+}

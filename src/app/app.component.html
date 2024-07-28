@@ -1,11 +1,11 @@
-<app-header></app-header>
 
-<ng-container *ngIf="isMobile$ | async; else desktop">
-  <app-landing-page-mobile></app-landing-page-mobile>
-</ng-container>
-<ng-template #desktop>
-  <app-landing-page-desktop></app-landing-page-desktop>
-</ng-template>
-<app-about></app-about>
-<app-property-owner></app-property-owner>
-<app-installers></app-installers>
+  <app-header></app-header>
+  
+  <ng-container *ngIf="isMobile$ | async; else desktop">
+    <app-landing-page-mobile></app-landing-page-mobile>
+  </ng-container>
+  <ng-template #desktop>
+    <app-landing-page-desktop></app-landing-page-desktop>
+  </ng-template>
+  <app-property-owner></app-property-owner>
+  <app-installers></app-installers>
