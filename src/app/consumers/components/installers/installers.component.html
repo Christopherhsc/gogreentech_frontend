@@ -1,61 +1,30 @@
 <div class="h-screen bg-gray-400">
   <div
-    class="installers mx-auto flex h-full w-11/12 flex-col justify-center py-6 xl:w-2/3 2xl:w-2/3 2xl:space-y-16 3xl:space-y-28"
-  >
-    <div
-      class="xl:text-md mx-auto mt-12 text-center text-sm font-bold text-white drop-shadow-lg md:w-2/3 2xl:w-2/3"
-    >
-      <p class="xl:text-2xl">{{ mainText }}</p>
+    class="installers mx-auto flex h-full w-11/12 flex-col justify-center py-6 xl:w-2/3 2xl:w-2/3 2xl:space-y-16 3xl:space-y-28 ">
+    <div class="xl:text-md mx-auto mt-12 text-center text-sm font-bold text-white drop-shadow-lg md:w-2/3 2xl:w-2/3">
+      <p class="text-lg 3xl:text-2xl text-left">{{ mainText }}</p>
     </div>
 
-    <!-- Expansion Panels for Small Screens -->
-    <mat-accordion class="block w-full xl:hidden" multi="false">
-      <mat-expansion-panel
-        *ngFor="
-          let section of [
-            { title: 'Som installatør:', content: installerText },
-            { title: 'Som ejendomsejer:', content: ownerText },
-          ]
-        "
-      >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ section.title }}
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <div *ngFor="let text of section.content">
-          <p>{{ text }}</p>
-        </div>
-      </mat-expansion-panel>
-    </mat-accordion>
-
-    <!-- Original Layout for Large Screens -->
-    <div
-      class="mt-12 hidden w-full flex-row justify-around space-x-8 text-xl xl:flex"
-    >
-      <div
-        class="flex w-1/2 flex-col rounded-lg border-2 bg-gray-300 bg-opacity-75 p-4"
-      >
-        <p class="text-2xl font-bold text-black">Som installatør:</p>
-        <div class="flex-grow"></div>
-        <div *ngFor="let text of installerText">
-          <p>{{ text }}</p>
-        </div>
-      </div>
-      <div
-        class="flex w-1/2 flex-col rounded-lg border-2 bg-gray-300 bg-opacity-75 p-4"
-      >
-        <p class="text-2xl font-bold text-black">Som ejendomsejer:</p>
-        <div class="flex-grow"></div>
-        <div *ngFor="let text of ownerText">
-          <p>{{ text }}</p>
-        </div>
+    <div class="mt-12 flex w-full flex-col 2xl:flex-row text-xl">
+      <div *ngFor="let section of sections" class="flex w-full flex-col rounded-lg p-4">
+        <mat-accordion class="w-full" multi="false">
+          <mat-expansion-panel class="border-2 ">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="text-white text-xl ">
+                  {{ section.title }}
+                </p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngFor="let text of section.content">
+              <p class="text-white text-lg">{{ text }}</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
       </div>
     </div>
 
-    <div
-      class="mx-auto mt-12 w-2/3 text-center text-xl font-extrabold text-white"
-    >
+    <div class="mx-auto mt-12 w-2/3 text-center text-lg font-extrabold text-white">
       <div *ngFor="let text of solutionsText">
         <p>{{ text }}</p>
       </div>

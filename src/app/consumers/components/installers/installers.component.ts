@@ -15,4 +15,9 @@ export class InstallersComponent {
   installerText = InstallersData.installerText;
   ownerText = InstallersData.ownerText;
   solutionsText = InstallersData.solutionsText;
+
+  sections = [
+    { title: 'Som installatør:', content: this.installerText },
+    { title: 'Som ejendomsejer:', content: this.ownerText }
+  ];
 }
