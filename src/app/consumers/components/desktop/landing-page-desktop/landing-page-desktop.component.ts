@@ -137,7 +137,7 @@ export class LandingPageDesktopComponent implements AfterViewInit {
     this.controls!.enabled = false;
 
     const from = { z: 1000 };
-    const to = { z: 1.7 };
+    const to = { z: 2.5 };
     const duration = 2000;
 
     const tween = new TWEEN.Tween(from)

@@ -7,11 +7,11 @@
 }
 
 .glassmorphism-header {
-  @apply border-b-2 bg-slate-700 font-semibold text-white drop-shadow-2xl;
+  @apply border-b-2 bg-slate-900 font-semibold text-white drop-shadow-2xl;
 }
 
 .glassmorphism-button{
-  @apply text-gray-300 hover:text-white hover:cursor-pointer
+  @apply text-gray-300 hover:text-primary-color hover:cursor-pointer
 }
 
 .primary-color {
