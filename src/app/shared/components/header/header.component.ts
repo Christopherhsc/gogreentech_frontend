@@ -14,7 +14,10 @@ import { ContactModalComponent } from '../contact-modal/contact-modal.component'
 export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
 
-  constructor(private responsiveService: ResponsiveService, public dialog: MatDialog) {}
+  constructor(
+    private responsiveService: ResponsiveService,
+    public dialog: MatDialog,
+  ) {}
 
   ngOnInit(): void {
     this.responsiveService.isMobile$.subscribe((isMobile) => {
@@ -31,10 +34,12 @@ export class HeaderComponent implements OnInit {
 
   openContactModal(): void {
     this.dialog.open(ContactModalComponent, {
-      width: '600px', // Adjust the width here
-      maxWidth: '90%', // Adjust the max-width to ensure responsiveness
-      height: 'auto', // Adjust the height if needed
-      data: {}
+      panelClass: 'contact-modal-sidebar',
+      width: '600px',
+      maxWidth: '100%',
+      height: '100%',
+      position: { left: '0', top: '0' },
+      data: {},
     });
   }
 }

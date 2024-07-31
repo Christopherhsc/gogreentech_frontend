@@ -15,15 +15,15 @@
 }
 
 .text-container {
-  @apply bg-gray-500  bg-opacity-50 p-4 rounded-lg border-2 shadow-black shadow-lg
+  @apply rounded-lg border-2 bg-gray-500 bg-opacity-50 p-4 shadow-lg shadow-black;
 }
 
 .text-title {
-  @apply  text-2xl drop-shadow-lg text-primary-color font-extrabold
+  @apply text-2xl font-extrabold text-primary-color drop-shadow-lg;
 }
 
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -32,16 +32,47 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-mdc-dialog-container {
-  background: transparent !important;
-}
-
-.mat-mdc-dialog-surface {
-  background: none !important;
-  box-shadow: none !important;
+.contact-modal-sidebar .mat-mdc-dialog-container {
   padding: 0;
 }
 
-::ng-deep .cdk-overlay-backdrop {
-  background-color: rgba(0, 0, 0, 0.7) !important; /* Adjust the opacity as needed */
+.contact-modal-sidebar .mat-mdc-dialog-surface {
+  max-width: none;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.contact-modal-sidebar .cdk-overlay-pane {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.contact-modal-sidebar .mat-mdc-dialog-container {
+  background: transparent !important;
+  padding: 0;
+}
+
+.contact-modal-sidebar .mat-mdc-dialog-surface {
+  background: none !important;
+  box-shadow: none !important;
+  max-width: none;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.contact-modal-sidebar .cdk-overlay-pane {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Ensure the overlay has a dark background */
 }

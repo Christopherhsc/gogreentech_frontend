@@ -27,10 +27,12 @@ export class InstallersComponent {
 
   openContactModal(): void {
     this.dialog.open(ContactModalComponent, {
-      width: '600px', // Adjust the width here
-      maxWidth: '90%', // Adjust the max-width to ensure responsiveness
-      height: 'auto', // Adjust the height if needed
-      data: {}
+      panelClass: 'contact-modal-sidebar',
+      width: '600px',
+      maxWidth: '100%',
+      height: '100%',
+      position: { left: '0', top: '0' },
+      data: {},
     });
   }
 }
