@@ -1,0 +1,13 @@
+:host ::ng-deep .mat-mdc-dialog-container {
+    background: transparent !important;
+  }
+  
+  :host ::ng-deep .mat-mdc-dialog-surface {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0;
+  }
+  
+  :host ::ng-deep .cdk-overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Adjust the opacity as needed */
+  }

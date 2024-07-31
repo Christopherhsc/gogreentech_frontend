@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.glassmorphism-button {
-  @apply text-gray-300 hover:text-primary-color hover:cursor-pointer
+:root {
+  --primary-color: #8fbf3c;
 }
 
 .primary-color {
@@ -30,4 +30,18 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-dialog-container {
+  background: transparent !important;
+}
+
+.mat-mdc-dialog-surface {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+::ng-deep .cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important; /* Adjust the opacity as needed */
 }

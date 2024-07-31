@@ -1,11 +1,23 @@
 <div class="installers h-screen flex bg-gray-700">
   <div class="mx-auto flex h-full w-3/5 flex-col justify-around text-white">
     <div class="text-container">
-      <p class="text-md 3xl:text-2xl text-left">{{ mainText }}</p>
+      <p class="text-left">
+        Grøn Energi for en Bedre Verden – og Større Udfordringer – lad os løse det sammen og modtag
+        henvisningsprovision fra Gogreentech. <br> <br>
+        Hos Gogreentech arbejder vi for en bæredygtig fremtid ved at sikre stabiliteten i elnettet, selv med de
+        udfordringer, den grønne omstilling medfører. Vores mission er at støtte Energinet i deres vision om grøn
+        energi, og vi søger nu samarbejde med elinstallatører for at identificere erhvervsejendomme med ledige
+        ampere. <br><br>
+        Energinet står over for en af den grønne omstillings største udfordringer: at balancere et elsystem, der i
+        stigende grad baserer sig på ustabile energikilder som sol og vind. Medarbejderne i Systemansvar,
+        Fleksibilitet og Balancering hos Energinet arbejder dagligt på at opretholde balance og stabilitet i
+        elsystemet, hvilket bliver stadig vanskeligere i takt med overgangen til vedvarende energi.
+        Gogreentech Bidrager til Balancen`
+      </p>
     </div>
 
-    <div class="flex w-full justify-center my-4 flex-wrap">
-      <div *ngFor="let section of sections" class="flex w-full 2xl:w-1/2 p-4">
+    <div class="flex w-full  flex-wrap flex-row justify-between space-x-4">
+      <div *ngFor="let section of sections" class="flex w-5/12">
         <div class="text-container w-full">
           <p class="text-title">{{ section.title }}</p>
           <div *ngFor="let text of section.content">
@@ -16,9 +28,30 @@
     </div>
 
     <div class="text-container">
-      <div *ngFor="let text of solutionsText">
-        <p>{{ text }}</p>
+      <div>
+        <p>Hos Energinet er det medarbejdernes opgave at sikre, at der dagligt indkøbes systemydelser for at holde
+          elsystemet i balance. Disse ydelser er afgørende for at opretholde de nødvendige 50 hertz og afværge ubalancer
+          og tekniske fejl, der kan føre til udfald i elnettet.
+          Systemydelser kan bestå af reservekapacitet fra
+          store batterier eller kraftværker, der kan aktiveres hurtigt for at genoprette balancen. <br> <br>
+          Efterhånden som elsystemet bliver mere afhængigt af vedvarende energikilder, bliver behovet for fleksible
+          og pålidelige systemydelser større. Udfordringen er især tydelig, når vinden ikke blæser, og solen ikke
+          skinner – i disse situationer er der brug for reserver, der kan træde til og balancere systemet. <br><br>
+          Gogreentech – Din Partner i Løsningen
+          Vi ønsker at betale elinstallatører for at henvise os til erhvervsejendomme med mindst 300 ledige ampere.
+          Ved at udnytte disse ressourcer kan vi hjælpe med at stabilisere elnettet og sikre en mere pålidelig
+          energiforsyning – når lejekontrakten er underskrevet og anlægget er sat i produktion, så modtager du din
+          provision.
+          Vi ser frem til at samarbejde med dig for at finde erhvervsejendomme, der kan bidrage til denne vigtige
+          mission. Sammen kan vi skabe en mere stabil og bæredygtig fremtid for alle.</p>
       </div>
+    </div>
+    <div class="h-12 mx-auto">
+
+      <button
+        class="border-2 border-primary-color w-auto mx-auto p-2 rounded-lg hover:bg-primary-color duration-300 transition-all"
+        (click)="openContactModal()">Kontakt
+        os i dag - lad os sammen forme fremtidens energiløsninger</button>
     </div>
   </div>
 </div>

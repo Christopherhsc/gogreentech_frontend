@@ -1,13 +1,13 @@
 <div class="h-screen flex flex-col bg-gradient-to-b from-gray-700 to-detail-color">
   <app-header class="flex-none"></app-header>
   <ng-template #desktop>
-    <app-landing-page-desktop class="flex-grow"></app-landing-page-desktop>
+    <app-landing-page-desktop id="home" class="flex-grow"></app-landing-page-desktop>
   </ng-template>
   <ng-container *ngIf="isMobile$ | async; else desktop">
     <app-landing-page-mobile class="flex-grow"></app-landing-page-mobile>
   </ng-container>
 </div>
 
-<app-property-owner></app-property-owner>
-<app-installers></app-installers>
+<app-property-owner id="property-owner"></app-property-owner>
+<app-installers id="installers"></app-installers>
 <app-footer></app-footer>
