@@ -9,6 +9,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { AboutComponent } from "./consumers/components/about/about.component";
 import { PropertyOwnerComponent } from "./consumers/components/property-owner/property-owner.component";
 import { InstallersComponent } from "./consumers/components/installers/installers.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { InstallersComponent } from "./consumers/components/installers/installer
     AsyncPipe,
     AboutComponent,
     PropertyOwnerComponent,
-    InstallersComponent
+    InstallersComponent,
+    FooterComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

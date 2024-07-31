@@ -1,30 +1,21 @@
-<div class=" installers h-screen flex bg-gray-600">
-  <div class="mx-auto flex h-full w-11/12 flex-col justify-around 2xl:w-2/3 text-white">
-    <div
-      class="xl:text-md mx-auto text-center text-md font-bold  drop-shadow-lg md:w-2/3 2xl:w-2/3 bg-gray-700 bg-opacity-50 p-4 rounded-lg">
+<div class="installers h-screen flex bg-gray-700">
+  <div class="mx-auto flex h-full w-3/5 flex-col justify-around text-white">
+    <div class="text-container">
       <p class="text-md 3xl:text-2xl text-left">{{ mainText }}</p>
     </div>
 
     <div class="flex w-full justify-center my-4 flex-wrap">
       <div *ngFor="let section of sections" class="flex w-full 2xl:w-1/2 p-4">
-        <mat-accordion class="w-full" multi="false">
-          <mat-expansion-panel class="border-2 border-primary-color">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                <p class=" text-xl  text-white">
-                  {{ section.title }}
-                </p>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div *ngFor="let text of section.content">
-              <p class=" text-lg text-white">{{ text }}</p>
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
+        <div class="text-container w-full">
+          <p class="text-title">{{ section.title }}</p>
+          <div *ngFor="let text of section.content">
+            <p>{{ text }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="mx-auto w-2/3  text-md  bg-gray-700 p-4 rouned-lg bg-opacity-50">
+    <div class="text-container">
       <div *ngFor="let text of solutionsText">
         <p>{{ text }}</p>
       </div>

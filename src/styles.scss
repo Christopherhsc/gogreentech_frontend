@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.glassmorphism-container {
-  @apply bg-opacity-5 shadow-lg backdrop-blur-md backdrop-filter;
-}
-
-.glassmorphism-header {
-  @apply border-b-2 bg-slate-900 font-semibold text-white drop-shadow-2xl;
-}
-
-.glassmorphism-button{
+.glassmorphism-button {
   @apply text-gray-300 hover:text-primary-color hover:cursor-pointer
 }
 
@@ -22,6 +14,20 @@
   color: #0c78be;
 }
 
+.text-container {
+  @apply bg-gray-500  bg-opacity-50 p-4 rounded-lg border-2 shadow-black shadow-lg
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-title {
+  @apply  text-2xl drop-shadow-lg text-primary-color font-extrabold
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
