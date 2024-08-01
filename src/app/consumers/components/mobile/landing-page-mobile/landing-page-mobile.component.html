@@ -18,7 +18,9 @@
       <p class="text-title text-center">
         {{ slides[currentSlide].text }}
       </p>
-      <p class="text-white px-4 text-center">{{ slides[currentSlide].subText }}</p>
+      <p class="px-4 text-center text-white">
+        {{ slides[currentSlide].subText }}
+      </p>
     </div>
     <button
       class="absolute left-0 top-1/2 z-10 -translate-y-1/2 transform p-2 text-3xl text-white"
@@ -34,16 +36,23 @@
     </button>
   </div>
 
-  <div class="flex h-full w-10/12 items-center justify-center bg-stone-200">
-    <p class="border-l-4 border-primary-color pl-4 text-left text-black">
-      Fremtidens energimix kræver innovative løsninger. Gogreentech anerkender
-      udfordringerne ved stigende elforbrug og udfasning af fossile
-      brændstoffer. Vi stabiliserer elnettet ved at leje overskydende ampere fra
-      virksomheder, hvilket balancerer udbud og efterspørgsel. Dette sikrer en
-      stabil og bæredygtig energiforsyning, samtidig med at eksisterende
-      ressourcer udnyttes optimalt. <br />
-      <br />
-      Kontakt os for samarbejde og understøt fremtidens energiløsninger.
-    </p>
+  <div
+    class="flex h-full w-11/12 flex-col items-center justify-center bg-stone-200 "
+  >
+    <div class="border-l-4 border-primary-color pl-4">
+      <p class="text-left text-black text-lg">
+        Fremtidens energimix kræver innovative løsninger. Gogreentech anerkender
+        udfordringerne ved stigende elforbrug og udfasning af fossile
+        brændstoffer. Vi stabiliserer elnettet ved at leje overskydende ampere
+        fra virksomheder, hvilket balancerer udbud og efterspørgsel. Dette
+        sikrer en stabil og bæredygtig energiforsyning, samtidig med at
+        eksisterende ressourcer udnyttes optimalt.
+      </p>
+      <button
+        class=" mt-4 w-1/2 rounded-lg border-2 border-white bg-gradient-to-br from-primary-color to-transparent py-2 text-slate-600 text-lg font-bold"
+      >
+        Kontakt os
+      </button>
+    </div>
   </div>
 </div>

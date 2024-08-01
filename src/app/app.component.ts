@@ -6,10 +6,9 @@ import { LandingPageDesktopComponent } from './consumers/components/desktop/land
 import { Observable } from 'rxjs';
 import { ResponsiveService } from './shared/services/responsive.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { AboutComponent } from "./consumers/components/about/about.component";
-import { PropertyOwnerComponent } from "./consumers/components/property-owner/property-owner.component";
-import { InstallersComponent } from "./consumers/components/installers/installers.component";
-import { FooterComponent } from "./shared/components/footer/footer.component";
+import { PropertyOwnerComponent } from './consumers/components/property-owner/property-owner.component';
+import { InstallersComponent } from './consumers/components/installers/installers.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +20,10 @@ import { FooterComponent } from "./shared/components/footer/footer.component";
     LandingPageMobileComponent,
     LandingPageDesktopComponent,
     AsyncPipe,
-    AboutComponent,
     PropertyOwnerComponent,
     InstallersComponent,
-    FooterComponent
-],
+    FooterComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
