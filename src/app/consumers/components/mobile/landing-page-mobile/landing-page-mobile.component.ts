@@ -1,153 +1,66 @@
-import {
-  Component,
-  ElementRef,
-  Renderer2,
-  ViewChild,
-  AfterViewInit,
-  HostListener,
-} from '@angular/core';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as THREE from 'three';
-import * as TWEEN from '@tweenjs/tween.js';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-landing-page-mobile',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './landing-page-mobile.component.html',
-  styleUrl: './landing-page-mobile.component.scss',
+  styleUrls: ['./landing-page-mobile.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1s', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('1s', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
-export class LandingPageMobileComponent implements AfterViewInit {
-  @ViewChild('earthCanvas', { static: true })
-  earthCanvas!: ElementRef<HTMLCanvasElement>;
+export class LandingPageMobileComponent implements OnInit, OnDestroy {
+  slides = [
+    { image: '/assets/gogreentech_logo.png', text: 'Energiforbindelser og Lejeaftaler', subText: 'Gogreentech forbinder ejendomsejere med Energinet og tilbyder lejeaftaler for overskydende ampere, samt honorarer til elinstallatører for henvisninger.' },
+    { image: 'assets/industry.jpg', text: 'Innovative Energiløsninger', subText: 'Med stigende elforbrug og udfasning af fossile brændstoffer, tilbyder Gogreentech innovative løsninger til at stabilisere elnettet gennem udlejning af overskydende energiressourcer.' },
+    { image: 'assets/installers.png', text: 'Optimal Energiudnyttelse', subText: 'Ved at leje overskydende ampere til Gogreentech, bidrager virksomheder til en stabil og bæredygtig energiforsyning, samtidig med at de udnytter deres ressourcer optimalt.' },
+  ];
 
-  private earth: THREE.Object3D | undefined;
-  private controls: OrbitControls | undefined;
-  private isDragging = false;
-  private directionalLight: THREE.DirectionalLight | undefined;
-  private camera: THREE.PerspectiveCamera | undefined;
-  private dragTimeout: any;
-  private isAnimating = false;
+  currentSlide = 0;
+  showSlide = true;
+  timer: any;
 
-  ngAfterViewInit() {
-    this.initThreeJS();
+  ngOnInit() {
+    this.resetTimer();
   }
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize() {
-    if (this.camera && this.controls) {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
-      this.camera.updateProjectionMatrix();
-      this.controls.update();
-    }
+  ngOnDestroy() {
+    clearInterval(this.timer);
   }
 
-  initThreeJS() {
-    const canvas = this.earthCanvas.nativeElement;
-    const scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000,
-    );
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      alpha: true,
-      antialias: true,
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const loader = new GLTFLoader();
-    loader.load('assets/earth.gltf', (gltf) => {
-      this.earth = gltf.scene;
-      scene.add(this.earth);
-      this.earth.position.set(0, 0, 0);
-
-      // Traverse and adjust materials if necessary
-      this.earth.traverse((node: THREE.Object3D) => {
-        if ((node as THREE.Mesh).isMesh) {
-          const mesh = node as THREE.Mesh;
-          const material = mesh.material as THREE.MeshStandardMaterial;
-          mesh.material = new THREE.MeshStandardMaterial({
-            map: material.map,
-            color: material.color,
-          });
-        }
-      });
-
-      // Initiate zoom animation after the earth model is loaded
-      this.zoomCamera(this.camera!);
-    });
-
-    // Add lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 3);
-    scene.add(ambientLight);
-
-    this.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    this.directionalLight.position.set(1, 1, 1).normalize();
-    scene.add(this.directionalLight);
-
-    // OrbitControls
-    this.controls = new OrbitControls(this.camera, renderer.domElement);
-    this.controls.dampingFactor = 0.25;
-    this.controls.enableZoom = false;
-    this.controls.enablePan = false;
-
-    // Allow full rotation on all axes
-    this.controls.minPolarAngle = 0;
-    this.controls.maxPolarAngle = Math.PI;
-    this.controls.minAzimuthAngle = -Infinity;
-    this.controls.maxAzimuthAngle = Infinity;
-
-    this.controls.addEventListener('start', () => {
-      this.isDragging = true;
-      clearTimeout(this.dragTimeout);
-    });
-
-    this.controls.addEventListener('end', () => {
-      this.dragTimeout = setTimeout(() => {
-        this.isDragging = false;
-      }, 1000);
-    });
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      TWEEN.update();
-      if (this.earth && !this.isDragging) {
-        this.earth.rotation.y += 0.002;
-        this.earth.rotation.x += 0.001;
-      }
-      if (this.directionalLight) {
-        this.directionalLight.position.copy(this.camera!.position);
-      }
-      if (!this.isAnimating) {
-        this.controls?.update();
-      }
-      renderer.render(scene, this.camera!);
-    };
-    animate();
+  resetTimer() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.nextSlide();
+    }, 9000);
   }
 
-  zoomCamera(camera: THREE.PerspectiveCamera) {
-    this.isAnimating = true;
-    this.controls!.enabled = false;
+  nextSlide() {
+    this.showSlide = false;
+    setTimeout(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+      this.showSlide = true;
+      this.resetTimer();
+    }, 1000); // Match the duration of the fade-out animation
+  }
 
-    const from = { z: 1000 };
-    const to = { z: 3.7 };
-    const duration = 1500;
-
-    const tween = new TWEEN.Tween(from)
-      .to(to, duration)
-      .easing(TWEEN.Easing.Quadratic.InOut)
-      .onUpdate(() => {
-        camera.position.z = from.z;
-      })
-      .onComplete(() => {
-        this.isAnimating = false;
-        this.controls!.enabled = true;
-      })
-      .start();
+  previousSlide() {
+    this.showSlide = false;
+    setTimeout(() => {
+      this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+      this.showSlide = true;
+      this.resetTimer();
+    }, 1000); // Match the duration of the fade-out animation
   }
 }
