@@ -1,0 +1,58 @@
+<div class="industry flex h-screen flex-col justify-between bg-gray-500">
+    <div class="flex flex-col justify-around text-white xl:w-1/2 3xl:w-1/5">
+      <div class="m-4  text-container drop-shadow-lg hidden xs:flex flex-col">
+        <p class="text-title text-center">Ejendomsejere</p>
+        <p>
+          Når ejendomsejere lejer m2 ud, så skal der normalt afgives
+          indendørsplads til en ny lejer. Det skal der ikke, når man lejer ud til
+          Gogreentech – vi lejer ikke m2, men overskydende ampere. Vi skal måske
+          bruge udendørs plads, svarende til en container, men måske kan vi klare
+          den uden – dette afklares ved nærmere besigtigelse. Den grønne
+          omstilling har brug for os og Gogreentech har brug for at leje ledig
+          strøm (ampere). Hvornår har man ledig strøm (ampere)
+        </p>
+        <ul>
+          <li>
+            Hvis man er ejer af en industrivirksomhed, der tidligere haft stor
+            produktion, men i dag har mindre produktion – så har man med stor
+            sandsynlighed overskudskapacitet
+          </li>
+          <li>
+            Man betaler ikke månedligt for overskudskapacitet (ampere), er man i
+            tvivl, så kan man altid sende målernummer til kc&#64;gogreentech.dk
+          </li>
+        </ul>
+        <p>
+          Når Gogreentech har besigtiget ejendommen, så aftaler vi en lejepris pr.
+          ampere – alt efter forhold.
+        </p>
+      </div>
+    </div>
+  
+    <div class="flex h-auto flex-col justify-around  bg-gray-500 bg-opacity-75  xl:flex-row ">
+      <mat-accordion class="m-auto block w-11/12 space-y-2 xl:hidden" multi="false">
+        <mat-expansion-panel *ngFor="let section of data">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              {{ section.title }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ section.description }}</p>
+          <ul>
+            <li *ngFor="let item of section.items">{{ item }}</li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+  
+      <div *ngFor="let section of data" class="m-4 hidden max-w-96 flex-col border-white xl:flex">
+        <p class="text-title text-left">
+          {{ section.title }}
+        </p>
+        <p class="text-md mb-12">{{ section.description }}</p>
+        <div class="flex-grow"></div>
+        <div *ngFor="let item of section.items">
+          <p class="text-sm">{{ item }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog'; // Add this import
-import { ContactModalComponent } from '../../../shared/components/contact-modal/contact-modal.component';
+import { ContactModalComponent } from '../../../../shared/components/contact-modal/contact-modal.component';
 import { InstallersData } from './installers-data';
 
 @Component({
@@ -10,7 +10,7 @@ import { InstallersData } from './installers-data';
   standalone: true,
   imports: [CommonModule, MatExpansionModule, MatDialogModule],
   templateUrl: './installers.component.html',
-  styleUrls: ['./installers.component.scss']
+  styleUrl: './installers.component.scss',
 })
 export class InstallersComponent {
   mainText = InstallersData.mainText;
@@ -20,7 +20,7 @@ export class InstallersComponent {
 
   sections = [
     { title: 'Som installatør:', content: this.installerText },
-    { title: 'Som ejendomsejer:', content: this.ownerText }
+    { title: 'Som ejendomsejer:', content: this.ownerText },
   ];
 
   constructor(public dialog: MatDialog) {}

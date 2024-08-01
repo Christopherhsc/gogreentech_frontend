@@ -8,7 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   standalone: true,
   imports: [CommonModule, MatExpansionModule],
   templateUrl: './property-owner.component.html',
-  styleUrls: ['./property-owner.component.scss'],
+  styleUrl: './property-owner.component.scss',
 })
 export class PropertyOwnerComponent {
   data = propertyOwnerData;
