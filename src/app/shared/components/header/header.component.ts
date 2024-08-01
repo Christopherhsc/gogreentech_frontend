@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ResponsiveService } from '../../services/responsive.service';
 import { ContactModalComponent } from '../contact-modal/contact-modal.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule, MatDialogModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
