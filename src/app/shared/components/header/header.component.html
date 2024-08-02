@@ -1,6 +1,6 @@
 <!-- Desktop Nav -->
 <nav *ngIf="!isMobile" class="details z-50 h-20 w-full border-b-2 px-2">
-  <div class="flex h-full flex-row justify-between">
+  <div class="flex h-full flex-row justify-around">
     <div id="logo" class="gogreentech-logo flex flex-row items-center">
       <img
         class="z-40 h-16 w-auto"
@@ -9,7 +9,7 @@
       />
       <div class="flex flex-col">
         <p class="text-2xl font-extrabold text-primary-color">GoGreenTech</p>
-        <p class="text-sm font-bold text-white">TECH FOR THE CLIMATE</p>
+        <p class="text-sm font-bold text-gray-900">TECH FOR THE CLIMATE</p>
       </div>
     </div>
     <div class="flex flex-row items-center space-x-6 px-4 text-lg">
@@ -68,16 +68,16 @@
       <p class="glassmorphism-button" (click)="openContactModal()">Kontakt</p>
     </div>
     <div
-      class="absolute bottom-0 flex w-full items-center justify-around p-4 text-left text-white "
+      class="absolute bottom-0 flex w-full items-center justify-around p-4 text-left text-white"
     >
-      <div class="flex flex-col">
+      <div class="flex flex-col text-xs text-gray-500">
         <p>GoGreenTech A/S</p>
         <p>Møllehaven 7</p>
         <p>DK - 4040 Jyllinge</p>
       </div>
       <div class="flex flex-row items-center">
         <img class="size-24" src="/assets/gogreentech_logo.png" alt="" />
-        <div class="flex flex-col">
+        <div class="hidden flex-col xs:flex">
           <p class="text-2xl font-extrabold text-primary-color">GoGreenTech</p>
           <p class="text-sm font-bold text-white">TECH FOR THE CLIMATE</p>
         </div>

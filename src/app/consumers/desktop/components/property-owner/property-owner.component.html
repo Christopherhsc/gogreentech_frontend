@@ -5,35 +5,33 @@
       <p>
         Når ejendomsejere lejer m2 ud, så skal der normalt afgives
         indendørsplads til en ny lejer. Det skal der ikke, når man lejer ud til
-        Gogreentech – vi lejer ikke m2, men overskydende ampere. Vi skal måske
-        bruge udendørs plads, svarende til en container, men måske kan vi klare
-        den uden – dette afklares ved nærmere besigtigelse. Den grønne
+        Gogreentech – vi lejer ikke m2, men overskydende ampere. Ved nærmere
+        besigtigelse afklares det om vi skal bruge undendørs plads! Den grønne
         omstilling har brug for os og Gogreentech har brug for at leje ledig
-        strøm (ampere). Hvornår har man ledig strøm (ampere)
+        strøm (ampere). Hvornår har man ledig strøm (ampere)?
       </p>
-      <ul>
-        <li>
+      <ul class="list-inside">
+        <li class="before:content-['•'] before:mr-2">
           Hvis man er ejer af en industrivirksomhed, der tidligere haft stor
           produktion, men i dag har mindre produktion – så har man med stor
           sandsynlighed overskudskapacitet
         </li>
-        <li>
+        <li class="before:content-['•'] before:mr-2">
           Man betaler ikke månedligt for overskudskapacitet (ampere), er man i
-          tvivl, så kan man altid sende målernummer til kc&#64;gogreentech.dk
+          tvivl, så kan man altid sende målernummer til
+          kontakt&#64;gogreentech.dk
         </li>
       </ul>
       <p>
-        Når Gogreentech har besigtiget ejendommen, så aftaler vi en lejepris pr.
-        ampere – alt efter forhold.
+        Når Gogreentech har besigtiget ejendommen, så aftaler vi en huslejepris
+        pr. ampere – alt efter forhold.
       </p>
+      <p class="text-sm">Ejendomsejere opnår ekstra huslejeindtægter og ejendommen stiger i værdi</p>
     </div>
   </div>
 
   <div class="flex h-auto flex-row justify-around bg-gray-500 bg-opacity-75">
-    <div
-      *ngFor="let section of data"
-      class="m-4 flex max-w-96 flex-col"
-    >
+    <div *ngFor="let section of data" class="m-4 flex max-w-96 flex-col">
       <p class="text-title text-left">
         {{ section.title }}
       </p>
