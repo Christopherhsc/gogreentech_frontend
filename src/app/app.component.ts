@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LandingPageMobileComponent } from './consumers/mobile/landing-page-mobile/landing-page-mobile.component';
-import { LandingPageDesktopComponent } from './consumers/desktop/landing-page-desktop/landing-page-desktop.component';
 import { Observable } from 'rxjs';
 import { ResponsiveService } from './shared/services/responsive.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
+
+// Import your components
+import { LandingPageMobileComponent } from './consumers/mobile/landing-page-mobile/landing-page-mobile.component';
+import { LandingPageDesktopComponent } from './consumers/desktop/landing-page-desktop/landing-page-desktop.component';
 import { PropertyOwnerComponent } from './consumers/desktop/components/property-owner/property-owner.component';
 import { InstallersComponent } from './consumers/desktop/components/installers/installers.component';
-
-//shared components
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { PropertyOwnerMobileComponent } from './consumers/mobile/components/property-owner-mobile/property-owner-mobile.component';
+import { InstallersMobileComponent } from './consumers/mobile/components/installers-mobile/installers-mobile.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     PropertyOwnerComponent,
     InstallersComponent,
     FooterComponent,
-],
+    PropertyOwnerMobileComponent,
+    InstallersMobileComponent
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

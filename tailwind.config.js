@@ -4,10 +4,11 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "480px", // Custom small screen size
-        "2xl": "1440px", // Custom extra large screen size
-        "3xl": "1920px", // Custom extra extra large screen size
-        "4xl": "2560px", // Custom extra extra extra large screen size
+        "2xs": "376px",
+        xs: "480px", 
+        "2xl": "1440px", 
+        "3xl": "1920px", 
+        "4xl": "2560px", 
       },
       colors: {
         "primary-color": "#8fbf3c",
