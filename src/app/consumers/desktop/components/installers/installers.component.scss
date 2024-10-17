@@ -17,16 +17,3 @@
   opacity: 0.5;
   z-index: -1;
 }
-
-::ng-deep .mat-expansion-panel {
-  background: transparent !important;
-}
-
-::ng-deep .mat-expansion-panel-header {
-  background: transparent !important;
-}
-
-::ng-deep .mat-expansion-indicator::after {
-  font-size: 24px;
-  color: white;
-}

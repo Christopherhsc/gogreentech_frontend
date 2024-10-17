@@ -9,12 +9,13 @@ import {
 } from '@angular/animations';
 import { ResponsiveService } from '../../services/responsive.service';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-contact-modal',
   templateUrl: './contact-modal.component.html',
   styleUrls: ['./contact-modal.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   standalone: true,
   animations: [
     trigger('slideInOut', [

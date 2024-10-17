@@ -1,10 +1,7 @@
 <!-- Desktop Layout -->
 <ng-container *ngIf="!(isMobile$ | async); else mobileLayout">
-  <div class="flex h-screen flex-col bg-gradient-to-b from-stone-200 via-stone-200 to-detail-color">
-    <app-header class="flex-none"></app-header>
-    <app-landing-page-desktop id="home" class="flex-grow"></app-landing-page-desktop>
-  </div>
-
+  <app-header></app-header>
+  <app-landing-page-desktop id="home"></app-landing-page-desktop>
   <app-property-owner id="property-owner"></app-property-owner>
   <app-installers id="installers"></app-installers>
   <app-footer></app-footer>
@@ -13,7 +10,10 @@
 <!-- Mobile Layout -->
 <ng-template #mobileLayout>
   <app-header></app-header>
-  <app-landing-page-mobile class="flex-grow" id="home"></app-landing-page-mobile>
+  <app-landing-page-mobile
+    class="flex-grow"
+    id="home"
+  ></app-landing-page-mobile>
   <ng-container>
     <app-property-owner-mobile id="property-owner"></app-property-owner-mobile>
     <app-installers-mobile id="installers"></app-installers-mobile>

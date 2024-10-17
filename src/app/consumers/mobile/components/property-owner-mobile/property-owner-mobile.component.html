@@ -7,12 +7,12 @@
       <div
         *ngFor="let section of data"
         class="m-2 pl-2 rounded-sm border-l-4 border-primary-color bg-stone-200"
-        [ngClass]="{ 'cursor-pointer': section.isButton }"
-        (click)="section.isButton ? toggleText() : null"
+        [ngClass]="{ 'cursor-pointer': section.haveButton }"
+        (click)="section.haveButton ? toggleText() : null"
       >
         <div class="flex items-center justify-between">
           <h3 class="text-title font-bold">{{ section.title }}</h3>
-          <span *ngIf="section.isButton" class="arrow text-title">
+          <span *ngIf="section.haveButton" class="arrow text-title">
             <span *ngIf="!showText"> &#9660;</span>
             <span *ngIf="showText"> &#9650;</span>
           </span>
@@ -20,7 +20,7 @@
         <p class="line-clamp-3 text-sm">{{ section.description }}</p>
         <ul>
           <li
-            class="text-xs text-gray-600 underline"
+            class="text-xs text-gray-600"
             *ngFor="let item of section.items"
           >
             {{ item }}

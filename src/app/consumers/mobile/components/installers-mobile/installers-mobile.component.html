@@ -1,6 +1,16 @@
-<div class="installer-background 2xs:px-4 2x:py-6 h-screen px-1 py-6">
+<div class="installer-background 2x:py-6 h-screen px-1 py-6 2xs:px-4">
   <div class="flex h-full flex-col justify-around rounded-lg bg-stone-200 p-4">
     <div *ngIf="!showMore" class="flex w-full flex-col space-y-2">
+      <div class="rounded-lg border-2 border-primary-color p-4 text-sm">
+        <p class="text-title">Som Ejendomsejer:</p>
+        <p>De bidrager til den grønne omstilling</p>
+        <p>
+          Der er ingen omkostninger forbundet med løsningen for ejendomsejeren
+        </p>
+        <p>
+          De vil modtage en leje indtægt pr. ampere de lejer ud til Gogreentech
+        </p>
+      </div>
       <div class="rounded-lg border-2 border-primary-color p-4 text-sm">
         <p class="text-title">Som Installatør:</p>
         <p>Du bliver partner til Gogreentech</p>
@@ -12,21 +22,11 @@
           der skal udføre arbejdet
         </p>
       </div>
-      <div class="rounded-lg border-2 border-primary-color p-4 text-sm">
-        <p class="text-title">Som Ejendomsejer:</p>
-        <p>De bidrager til den grønne omstilling</p>
-        <p>
-          Der er ingen omkostninger forbundet med løsningen for ejendomsejeren
-        </p>
-        <p>
-          De vil modtage en leje indtægt pr. ampere de lejer ud til Gogreentech
-        </p>
-      </div>
     </div>
 
-    <div *ngIf="showMore" class="2xs:space-y-2 flex w-full flex-col">
+    <div *ngIf="showMore" class="flex w-full flex-col 2xs:space-y-2">
       <div
-        class="2xs:p-4 space-y-6 rounded-lg border-2 border-primary-color p-2 text-sm"
+        class="space-y-6 rounded-lg border-2 border-primary-color p-2 text-sm 2xs:p-4"
       >
         <p class="text-title">
           Grøn Energi og Stabilitet – Samarbejd med Gogreentech
@@ -57,7 +57,7 @@
       <ng-container *ngIf="!showMore; else goBackTemplate">
         <button
           (click)="toggleShowMore()"
-          class="2xs:p-4 rounded-md border-2 border-primary-color p-1 font-semibold"
+          class="rounded-md border-2 border-primary-color p-1 font-semibold 2xs:p-4"
         >
           Læs mere
         </button>
@@ -65,14 +65,14 @@
       <ng-template #goBackTemplate>
         <button
           (click)="toggleShowMore()"
-          class="2xs:p-4 rounded-md border-2 border-primary-color p-1 font-semibold"
+          class="rounded-md border-2 border-primary-color p-1 font-semibold 2xs:p-4"
         >
           Gå tilbage
         </button>
       </ng-template>
       <button
         (click)="openContactModal()"
-        class="2xs:p-4 rounded-md border-2 bg-primary-color p-1 font-semibold text-white"
+        class="rounded-md border-2 bg-primary-color p-1 font-semibold text-white 2xs:p-4"
       >
         Kontakt os i dag!
       </button>

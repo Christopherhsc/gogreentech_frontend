@@ -11,7 +11,7 @@ export const propertyOwnerData = [
     items: [
         'Læs mere...',
       ],
-    isButton: true,
+    haveButton: true,
   },
   {
     title: 'Identifikation af ejendomme',

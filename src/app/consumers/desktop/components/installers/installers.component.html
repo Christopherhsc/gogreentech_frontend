@@ -1,37 +1,43 @@
-<div class="installers h-screen flex bg-gray-700">
-    <div class="mx-auto flex h-full w-11/12 2xl:w-3/5 flex-col justify-around text-white">
-      <div class="text-container">
-        <p class="text-left">
-          Grøn Energi for en Bedre Verden – og Større Udfordringer – lad os løse det sammen og modtag
-          henvisningsprovision fra Gogreentech. <br> 
-          Hos Gogreentech arbejder vi for en bæredygtig fremtid ved at sikre stabiliteten i elnettet, selv med de
-          udfordringer, den grønne omstilling medfører. Vores mission er at støtte Energinet i deres vision om grøn
-          energi, og vi søger nu samarbejde med elinstallatører for at identificere erhvervsejendomme med ledige
-          ampere. <br>
-          Energinet står over for en af den grønne omstillings største udfordringer: at balancere et elsystem, der i
-          stigende grad baserer sig på ustabile energikilder som sol og vind. Medarbejderne i Systemansvar,
-          Fleksibilitet og Balancering hos Energinet arbejder dagligt på at opretholde balance og stabilitet i
-          elsystemet, hvilket bliver stadig vanskeligere i takt med overgangen til vedvarende energi.
-          Gogreentech Bidrager til Balancen`
-        </p>
-      </div>
-  
-      <div class="flex w-full  flex-wrap flex-row justify-between 2xl:space-x-4">
-        <div *ngFor="let section of sections" class="flex w-5/12">
-          <div class="text-container w-full">
-            <p class="text-title">{{ section.title }}</p>
-            <div *ngFor="let text of section.content">
-              <p>{{ text }}</p>
-            </div>
+<div class="installers flex h-screen bg-gray-700">
+  <div
+    class="mx-auto flex h-full w-11/12 flex-col justify-around text-white 2xl:w-3/5"
+  >
+    <div class="text-container">
+      <p class="text-left">
+        Grøn Energi for en Bedre Verden – og Større Udfordringer – lad os løse
+        det sammen og modtag henvisningsprovision fra Gogreentech. <br />
+        Hos Gogreentech arbejder vi for en bæredygtig fremtid ved at sikre
+        stabiliteten i elnettet, selv med de udfordringer, den grønne omstilling
+        medfører. Vores mission er at støtte Energinet i deres vision om grøn
+        energi, og vi søger nu samarbejde med elinstallatører for at
+        identificere erhvervsejendomme med ledige ampere. <br />
+        Energinet står over for en af den grønne omstillings største
+        udfordringer: at balancere et elsystem, der i stigende grad baserer sig
+        på ustabile energikilder som sol og vind. Medarbejderne i Systemansvar,
+        Fleksibilitet og Balancering hos Energinet arbejder dagligt på at
+        opretholde balance og stabilitet i elsystemet, hvilket bliver stadig
+        vanskeligere i takt med overgangen til vedvarende energi. Gogreentech
+        Bidrager til Balancen`
+      </p>
+    </div>
+
+    <div class="flex w-full flex-row flex-wrap justify-between 2xl:space-x-4">
+      <div *ngFor="let section of sections" class="flex w-5/12">
+        <div class="text-container w-full">
+          <p class="text-title">{{ section.title }}</p>
+          <div *ngFor="let text of section.content">
+            <p>{{ text }}</p>
           </div>
         </div>
       </div>
-      <div class="h-12 mx-auto 2xl:block hidden">
-  
-        <button
-          class="border-2 border-primary-color w-auto mx-auto p-2 rounded-lg hover:bg-primary-color duration-300 transition-all"
-          (click)="openContactModal()">Kontakt
-          os i dag - lad os sammen forme fremtidens energiløsninger</button>
-      </div>
+    </div>
+    <div class="mx-auto block h-12">
+      <button
+        class="mx-auto w-auto rounded-lg border-2 border-primary-color p-2 transition-all duration-300 hover:bg-primary-color"
+        (click)="openContactModal()"
+      >
+        Kontakt os i dag - lad os sammen forme fremtidens energiløsninger
+      </button>
     </div>
   </div>
+</div>

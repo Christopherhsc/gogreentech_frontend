@@ -17,7 +17,7 @@
 
   <!-- Desktop Layout -->
   <ng-container *ngIf="!isMobile">
-    <div class="text-container  text-white">
+    <div class="text-container text-white">
       <p>
         Vi ved alle at den grønne omstilling tager fart nu, og du kan som
         ejendomsejer være med – samtid er fordelene for dig indlysende:
@@ -51,7 +51,9 @@
 
   <!-- Mobile Layout -->
   <ng-container *ngIf="isMobile">
-    <div class="border-l-4 border-primary-color text-lg font-bold text-white pl-2">
+    <div
+      class="border-l-4 border-primary-color pl-2 text-lg font-bold text-white"
+    >
       <p>
         Den grønne omstilling tager fart nu, og du kan som ejendomsejer være
         med:
@@ -71,10 +73,16 @@
   </ng-container>
 
   <div class="flex flex-col">
-    <div class="text-title mx-auto ">Vil du vide mere?</div>
+    <div class="text-title mx-auto">Vil du vide mere?</div>
     <div class="mt-4 flex flex-row justify-around text-white underline">
-      <p>+45 25 20 90 10</p>
-      <p>kc&#64;gogreentech.dk</p>
+      <div class="flex flex-row space-x-2">
+        <mat-icon>phone</mat-icon>
+        <a href="tel:+4525209010">+45 25 20 90 10</a>
+      </div>
+      <div class="flex flex-row space-x-2">
+        <mat-icon>mail</mat-icon>
+        <a href="mailto:kontakt@gogreentech.dk">kontakt&#64;gogreentech.dk</a>
+      </div>
     </div>
   </div>
 </div>

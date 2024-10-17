@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setTimeout(() => {
-        this.isOverlayVisible = false; // Close overlay after 1 second
+        this.isOverlayVisible = false;
       }, 700);
     }
   }
@@ -42,14 +42,26 @@ export class HeaderComponent implements OnInit {
   }
 
   openContactModal(): void {
-    this.dialog.open(ContactModalComponent, {
-      panelClass: 'contact-modal-sidebar',
-      width: '450px',
-      maxWidth: '100%',
-      height: '100%',
-      position: { left: '0', top: '0' },
-      data: {},
-    });
-    this.isOverlayVisible = false; // Close overlay when opening modal
+    const dialogConfig = this.isMobile
+      ? {
+          panelClass: 'contact-modal-sidebar',
+          width: '100%',
+          maxWidth: '100%',
+          height: '100%',
+          position: { left: '0', top: '0' },
+          data: {},
+        }
+      : {
+          panelClass: 'contact-modal-sidebar',
+          minWidth: '550px',
+          maxWidth: '50%',
+          width: '50%',
+          height: '100%',
+          position: { left: '0', top: '0' },
+          data: {},
+        };
+
+    this.dialog.open(ContactModalComponent, dialogConfig);
+    this.isOverlayVisible = false; 
   }
 }

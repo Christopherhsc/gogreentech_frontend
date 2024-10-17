@@ -1,41 +1,55 @@
-<div class="industry flex h-screen flex-col justify-between bg-gray-500">
-  <div class="flex flex-col justify-around text-white xl:w-1/2 3xl:w-1/5">
-    <div class="text-container m-4 flex-col drop-shadow-lg">
-      <p class="text-title text-center">Ejendomsejere</p>
-      <p>
+<div class="h-64">
+  <div class="flex flex-col justify-around p-8 w-full">
+    <div class=" flex-col drop-shadow-lg">
+      <p class="text-title mb-4 text-left text-2xl font-bold">
+        Ejendomsejere
+      </p>
+      <p class="mb-4">
         Når ejendomsejere lejer m2 ud, så skal der normalt afgives
         indendørsplads til en ny lejer. Det skal der ikke, når man lejer ud til
-        Gogreentech – vi lejer ikke m2, men overskydende ampere. Ved nærmere
-        besigtigelse afklares det om vi skal bruge undendørs plads! Den grønne
-        omstilling har brug for os og Gogreentech har brug for at leje ledig
-        strøm (ampere). Hvornår har man ledig strøm (ampere)?
+        Gogreentech – vi lejer ikke m2, men overskydende ampere...
       </p>
-      <ul class="list-inside">
-        <li class="before:content-['•'] before:mr-2">
+      <ul class="mb-4 list-inside space-y-2">
+        <li class="before:mr-2 before:content-['•']">
           Hvis man er ejer af en industrivirksomhed, der tidligere haft stor
-          produktion, men i dag har mindre produktion – så har man med stor
-          sandsynlighed overskudskapacitet
+          produktion...
         </li>
-        <li class="before:content-['•'] before:mr-2">
-          Man betaler ikke månedligt for overskudskapacitet (ampere), er man i
-          tvivl, så kan man altid sende målernummer til
-          kontakt&#64;gogreentech.dk
+        <li class="before:mr-2 before:content-['•']">
+          Man betaler ikke månedligt for overskudskapacitet (ampere)...
         </li>
       </ul>
-      <p>
+      <p class="mb-4">
         Når Gogreentech har besigtiget ejendommen, så aftaler vi en huslejepris
-        pr. ampere – alt efter forhold.
+        pr. ampere...
       </p>
-      <p class="text-sm">Ejendomsejere opnår ekstra huslejeindtægter og ejendommen stiger i værdi</p>
+      <p class="mb-4">
+        Ejendomsejere opnår ekstra huslejeindtægter og ejendommen stiger i værdi
+      </p>
     </div>
   </div>
+</div>
 
+<div
+  class="industry relative flex min-h-[1000px] flex-col justify-between text-white"
+>
+  <div class="slideshow absolute inset-0 -z-10">
+    <div class="slide-image"></div>
+    <div class="slide-image"></div>
+    <div class="slide-image"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex flex-grow flex-col justify-center p-8 xl:w-1/2 3xl:w-1/5">
+
+  </div>
+
+  <!-- Content at the Bottom -->
   <div class="flex h-auto flex-row justify-around bg-gray-500 bg-opacity-75">
     <div *ngFor="let section of data" class="m-4 flex max-w-96 flex-col">
-      <p class="text-title text-left">
+      <p class="text-title text-left text-xl font-semibold">
         {{ section.title }}
       </p>
-      <p class="text-md mb-12 text-white">{{ section.description }}</p>
+      <p class="text-md mb-4">{{ section.description }}</p>
       <div class="flex-grow"></div>
       <div *ngFor="let item of section.items">
         <p class="text-sm text-gray-200">{{ item }}</p>
