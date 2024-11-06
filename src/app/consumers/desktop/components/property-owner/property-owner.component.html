@@ -1,58 +1,28 @@
-<div class="h-64">
-  <div class="flex flex-col justify-around p-8 w-full">
-    <div class=" flex-col drop-shadow-lg">
-      <p class="text-title mb-4 text-left text-2xl font-bold">
-        Ejendomsejere
-      </p>
-      <p class="mb-4">
-        Når ejendomsejere lejer m2 ud, så skal der normalt afgives
-        indendørsplads til en ny lejer. Det skal der ikke, når man lejer ud til
-        Gogreentech – vi lejer ikke m2, men overskydende ampere...
-      </p>
-      <ul class="mb-4 list-inside space-y-2">
-        <li class="before:mr-2 before:content-['•']">
-          Hvis man er ejer af en industrivirksomhed, der tidligere haft stor
-          produktion...
-        </li>
-        <li class="before:mr-2 before:content-['•']">
-          Man betaler ikke månedligt for overskudskapacitet (ampere)...
-        </li>
-      </ul>
-      <p class="mb-4">
-        Når Gogreentech har besigtiget ejendommen, så aftaler vi en huslejepris
-        pr. ampere...
-      </p>
-      <p class="mb-4">
-        Ejendomsejere opnår ekstra huslejeindtægter og ejendommen stiger i værdi
-      </p>
+<div class="flex justify-around bg-slate-700">
+  <!-- Left Section -->
+  <div
+    class="industry relative flex h-[900px] w-1/2 flex-col justify-between text-white"
+  >
+    <div class="slideshow absolute inset-0 z-10 border-2 border-primary-color">
+      <div class="slide-image"></div>
+      <div class="slide-image"></div>
+      <div class="slide-image"></div>
     </div>
   </div>
-</div>
 
-<div
-  class="industry relative flex min-h-[1000px] flex-col justify-between text-white"
->
-  <div class="slideshow absolute inset-0 -z-10">
-    <div class="slide-image"></div>
-    <div class="slide-image"></div>
-    <div class="slide-image"></div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="flex flex-grow flex-col justify-center p-8 xl:w-1/2 3xl:w-1/5">
-
-  </div>
-
-  <!-- Content at the Bottom -->
-  <div class="flex h-auto flex-row justify-around bg-gray-500 bg-opacity-75">
-    <div *ngFor="let section of data" class="m-4 flex max-w-96 flex-col">
-      <p class="text-title text-left text-xl font-semibold">
+  <!-- Right Section (Content at the Bottom) -->
+  <div class="z-20 grid h-auto w-1/2 grid-cols-2 gap-4 place-items-center">
+    <div
+      *ngFor="let section of data"
+      class="m-4 flex max-w-96 flex-col items-center text-center text-white"
+    >
+      <p class="text-title text-xl font-semibold">
         {{ section.title }}
       </p>
       <p class="text-md mb-4">{{ section.description }}</p>
-      <div class="flex-grow"></div>
+      <div class=""></div>
       <div *ngFor="let item of section.items">
-        <p class="text-sm text-gray-200">{{ item }}</p>
+        <p class="text-sm text-gray-300">{{ item }}</p>
       </div>
     </div>
   </div>
