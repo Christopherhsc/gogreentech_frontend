@@ -1,41 +1,9 @@
-.slide-image {
+.static-image {
   position: absolute;
   inset: 0;
+  background-image: url("/assets/deal1.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.slide-image:nth-child(1) {
-  background-image: url("/assets/deal1.jpg");
-  animation: slideshow 15s infinite;
-}
-
-.slide-image:nth-child(2) {
-  background-image: url("/assets/deal2.jpg");
-  animation: slideshow2 15s infinite;
-}
-
-.slide-image:nth-child(3) {
-  background-image: url("/assets/deal3.jpg");
-  animation: slideshow3 15s infinite;
-}
-
-@keyframes slideshow {
-  0%, 33% { opacity: 1; }
-  33.33%, 100% { opacity: 0; }
-}
-
-@keyframes slideshow2 {
-  0%, 50% { opacity: 0; }
-  50%, 83.33% { opacity: 1; }
-  83.33%, 100% { opacity: 0; }
-}
-
-@keyframes slideshow3 {
-  0%, 66.67% { opacity: 0; }
-  66.67%, 100% { opacity: 1; }
 }
