@@ -1,13 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { landingPageData } from './landing-page-mobile-data';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ContactModalComponent } from '../../../shared/components/contact-modal/contact-modal.component';
-import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page-mobile',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule], // Make sure CommonModule is here
   templateUrl: './landing-page-mobile.component.html',
   styleUrls: ['./landing-page-mobile.component.scss'],
   animations: [
@@ -20,28 +21,9 @@ import { MatDialog } from '@angular/material/dialog';
     ]),
   ],
 })
-export class LandingPageMobileComponent implements OnInit, OnDestroy {
-  slides = [
-    {
-      image: '/assets/gogreentech_logo.png',
-      text: 'Energiforbindelser og Lejeaftaler',
-      subText:
-        'Gogreentech forbinder ejendomsejere med Energinet og tilbyder lejeaftaler for overskydende ampere, samt honorarer til elinstallatører for henvisninger.',
-    },
-    {
-      image: 'assets/industry.jpg',
-      text: 'Innovative Energiløsninger',
-      subText:
-        'Med stigende elforbrug og udfasning af fossile brændstoffer, tilbyder Gogreentech innovative løsninger til at stabilisere elnettet gennem udlejning af overskydende energiressourcer.',
-    },
-    {
-      image: 'assets/installers.png',
-      text: 'Optimal Energiudnyttelse',
-      subText:
-        'Ved at leje overskydende ampere til Gogreentech, bidrager virksomheder til en stabil og bæredygtig energiforsyning, samtidig med at de udnytter deres ressourcer optimalt.',
-    },
-  ];
 
+export class LandingPageMobileComponent implements OnInit, OnDestroy {
+  images = landingPageData.images; 
   currentSlide = 0;
   showSlide = true;
   timer: any;
@@ -66,7 +48,7 @@ export class LandingPageMobileComponent implements OnInit, OnDestroy {
   nextSlide() {
     this.showSlide = false;
     setTimeout(() => {
-      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+      this.currentSlide = (this.currentSlide + 1) % this.images.length; // Use images length
       this.showSlide = true;
       this.resetTimer();
     }, 1000); // Match the duration of the fade-out animation
@@ -76,7 +58,7 @@ export class LandingPageMobileComponent implements OnInit, OnDestroy {
     this.showSlide = false;
     setTimeout(() => {
       this.currentSlide =
-        (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        (this.currentSlide - 1 + this.images.length) % this.images.length; // Use images length
       this.showSlide = true;
       this.resetTimer();
     }, 1000); // Match the duration of the fade-out animation

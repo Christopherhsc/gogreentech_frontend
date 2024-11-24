@@ -1,10 +1,12 @@
 <!-- Desktop Layout -->
 <ng-container *ngIf="!(isMobile$ | async); else mobileLayout">
-  <app-header></app-header>
-  <app-landing-page-desktop id="home"></app-landing-page-desktop>
-  <app-property-owner id="property-owner"></app-property-owner>
-  <app-installers id="installers"></app-installers>
-  <app-footer></app-footer>
+  <div class="flex flex-col justify-center xl:w-screen 3xl:w-3/5 m-auto">
+    <app-header></app-header>
+    <app-landing-page-desktop id="home" class="bg-gray-100"></app-landing-page-desktop>
+    <app-property-owner id="property-owner"></app-property-owner>
+    <app-installers id="installers" class="bg-gray-100"></app-installers>
+    <app-footer></app-footer>
+  </div>
 </ng-container>
 
 <!-- Mobile Layout -->

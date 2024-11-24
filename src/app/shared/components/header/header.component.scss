@@ -1,3 +1,28 @@
+/* Header Background Image */
+.static-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/header_image.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+}
+
+.static-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 70%);
+    z-index: 15; /* Ensure the gradient overlay stays above the image but below header content */
+}
+
+
+/* Ensure header content has a higher z-index than the image */
+.details .relative {
+    z-index: 20;
+}
+
+/* Header Buttons */
 .glassmorphism-button {
     position: relative;
     transition: color 0.3s;
@@ -18,8 +43,16 @@
     color: var(--primary-color);
     cursor: pointer;
 }
-
 .glassmorphism-button:hover::after {
     width: 100%;
 }
 
+/* Simplified Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+  
+  .show {
+    opacity: 1;
+  }

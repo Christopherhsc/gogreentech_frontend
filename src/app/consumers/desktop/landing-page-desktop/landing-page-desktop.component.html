@@ -1,5 +1,51 @@
-<div class="relative flex w-full overflow-hidden h-[750px]">
-  <div class="industry relative flex flex-col justify-between w-full mx-auto">
-    <div class="static-image absolute inset-0 z-10 border-2 border-primary-color w-full"></div>
+<div class="min-h-auto mx-4 my-24 flex w-full flex-col items-center justify-start">
+  <!-- TOP ROW WITH 2 ELEMENTS CENTERED -->
+  <div class="mb-24 flex w-full flex-row items-center justify-around gap-8">
+    <!-- FIRST ELEMENT (YouTube Iframe) -->
+    <div>
+      <iframe
+        class="overlay-iframe rounded-sm"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/GSQvvKCKq4k?autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- SECOND ELEMENT (Image and Text Block) -->
+    <div
+      class="flex h-[315px] w-[560px] flex-col items-center justify-between p-4"
+    >
+      <!-- Image Section -->
+      <div class="mb-4">
+        <img
+          [src]="data.details.image"
+          alt="Details Image"
+          class="h-auto w-full rounded-lg border-primary-color border-2"
+        />
+      </div>
+      <!-- Text Section -->
+      <div class="text-left">
+        <p>{{ data.details.text }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID CONTENT CENTERED BELOW -->
+  <div
+    class="mx-auto grid w-3/4 grid-cols-2 justify-items-center gap-x-8 gap-y-12 p-12 text-center"
+  >
+    <div
+      *ngFor="let section of data.grid"
+      class="flex h-full w-4/5 flex-col items-center text-center text-black"
+    >
+      <p class="text-title font-semibold">{{ section.title }}</p>
+      <p class="text-md mb-4">{{ section.description }}</p>
+      <ul>
+        <li *ngFor="let item of section.items">{{ item }}</li>
+      </ul>
+    </div>
   </div>
 </div>

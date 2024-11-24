@@ -15,6 +15,10 @@ import { MatIconModule } from '@angular/material/icon';
 export class HeaderComponent implements OnInit {
   isMobile: boolean = false;
   isOverlayVisible: boolean = false;
+  showButtons: boolean = false;
+  showNav1: boolean = false;
+  showNav2: boolean = false;
+  showNav3: boolean = false;
 
   constructor(
     private responsiveService: ResponsiveService,
@@ -25,6 +29,24 @@ export class HeaderComponent implements OnInit {
     this.responsiveService.isMobile$.subscribe((isMobile) => {
       this.isMobile = isMobile;
     });
+
+    // Old logic: Trigger the fade-in effect for all buttons after a small delay
+    setTimeout(() => {
+      this.showButtons = true;
+    }, 200);
+
+    // New logic: Trigger the fade-in animation one by one with a delay
+    setTimeout(() => {
+      this.showNav1 = true;
+    }, 200); // Fade in the first item
+
+    setTimeout(() => {
+      this.showNav2 = true;
+    }, 1200); // Fade in the second item after 1s delay
+
+    setTimeout(() => {
+      this.showNav3 = true;
+    }, 2200); // Fade in the third item after another 1s delay
   }
 
   scrollToSection(sectionId: string): void {
@@ -62,6 +84,6 @@ export class HeaderComponent implements OnInit {
         };
 
     this.dialog.open(ContactModalComponent, dialogConfig);
-    this.isOverlayVisible = false; 
+    this.isOverlayVisible = false;
   }
 }

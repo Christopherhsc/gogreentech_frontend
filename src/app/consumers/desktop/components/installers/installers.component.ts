@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -13,10 +13,11 @@ import { ResponsiveService } from '../../../../shared/services/responsive.servic
   templateUrl: './installers.component.html',
   styleUrls: ['./installers.component.scss'],
 })
-export class InstallersComponent {
+export class InstallersComponent implements AfterViewInit {
   mainText = InstallersData.mainText;
   installerText = InstallersData.installerText;
   ownerText = InstallersData.ownerText;
+  images = InstallersData.images;
 
   isMobile: boolean = false;
 
@@ -27,11 +28,32 @@ export class InstallersComponent {
 
   constructor(
     public dialog: MatDialog,
-    private responsiveService: ResponsiveService,
+    private responsiveService: ResponsiveService
   ) {
     this.responsiveService.isMobile$.subscribe((isMobile) => {
       this.isMobile = isMobile;
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const imageElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      imageElements.forEach((element) => observer.observe(element));
+    }, 1500);
   }
 
   openContactModal(): void {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { propertyOwnerData } from './property-owner-data';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -11,5 +10,4 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './property-owner.component.scss',
 })
 export class PropertyOwnerComponent {
-  data = propertyOwnerData;
 }
