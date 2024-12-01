@@ -1,29 +1,44 @@
-<div class="min-h-auto mx-4 my-24 flex w-full flex-col items-center justify-start">
+<div
+  class="min-h-auto mx-4 flex w-full flex-col items-center justify-start my-12"
+>
+  <div class="w-11/12 flex-col justify-around  2xl:w-3/5 border-l-2 border-primary-color pl-6 mb-12">
+    <p>
+      Hos Gogreentech arbejder vi med at levere avancerede systemydelser til
+      Energinet, som er afgørende for at sikre stabilitet og balance i det
+      danske elsystem. Systemydelser er en samlet betegnelse for de tekniske
+      løsninger og ressourcer, der gør det muligt at opretholde
+      elforsyningssikkerheden.
+    </p>
+  </div>
   <!-- TOP ROW WITH 2 ELEMENTS CENTERED -->
-  <div class="mb-24 flex w-full flex-row items-center justify-around gap-8">
+  <div class="mb-24 flex w-full flex-row items-center justify-center gap-52">
     <!-- FIRST ELEMENT (YouTube Iframe) -->
     <div>
       <iframe
         class="overlay-iframe rounded-sm"
-        width="560"
-        height="315"
+        width="400"
+        height="190"
         src="https://www.youtube.com/embed/GSQvvKCKq4k?autoplay=1"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+      <p class="mt-6">
+        Denne video fra Energinet forklarer <br />
+        hvorfor systemydelser er så vigtige for samfundet
+      </p>
     </div>
     <!-- SECOND ELEMENT (Image and Text Block) -->
     <div
-      class="flex h-[315px] w-[560px] flex-col items-center justify-between p-4"
+      class="flex h-[280px] w-[400px] flex-col items-center justify-between p-4"
     >
       <!-- Image Section -->
       <div class="mb-4">
         <img
           [src]="data.details.image"
           alt="Details Image"
-          class="h-auto w-full rounded-lg border-primary-color border-2"
+          class="h-auto w-full rounded-lg border-2 border-primary-color"
         />
       </div>
       <!-- Text Section -->
@@ -42,7 +57,7 @@
       class="flex h-full w-4/5 flex-col items-center text-center text-black"
     >
       <p class="text-title font-semibold">{{ section.title }}</p>
-      <p class="text-md mb-4">{{ section.description }}</p>
+      <p class="mb-4">{{ section.description }}</p>
       <ul>
         <li *ngFor="let item of section.items">{{ item }}</li>
       </ul>

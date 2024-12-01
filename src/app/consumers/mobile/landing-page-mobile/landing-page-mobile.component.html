@@ -3,7 +3,7 @@
 >
   <div
     *ngIf="showSlide"
-    class="relative flex h-[600px] w-full items-center justify-center border-2 border-primary-color bg-cover bg-center"
+    class="relative flex h-[600px] w-full items-center justify-center bg-cover bg-center"
     [ngStyle]="{
       'background-image': 'url(' + images[currentSlide].src + ')',
     }"
@@ -15,7 +15,7 @@
     <div
     class="absolute inset-0 z-10 flex items-center justify-center"
   >
-    <p class="text-title text-center text-white w-full px-4">
+    <p class="text-xl text-center font-bold text-white w-full px-4">
       {{ images[currentSlide].text }}
     </p>
   </div>

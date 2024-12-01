@@ -1,8 +1,39 @@
 <!-- Desktop Layout -->
 <ng-container *ngIf="!(isMobile$ | async); else mobileLayout">
-  <div class="flex flex-col justify-center xl:w-screen 3xl:w-3/5 m-auto">
+  <div
+    class="relative m-auto flex flex-col justify-center bg-gray-100 xl:w-screen 4xl:w-3/5"
+  >
     <app-header></app-header>
-    <app-landing-page-desktop id="home" class="bg-gray-100"></app-landing-page-desktop>
+    <div
+      class="
+      relative 
+      inset-1/2 
+      z-50 flex 
+      h-16 
+      w-[550px] 
+      -translate-x-1/2 
+      -translate-y-1/2 
+      transform 
+      items-center 
+      justify-center 
+      rounded-2xl 
+      bg-primary-color 
+      px-4 
+      py-2 
+      text-center 
+      font-bold 
+      text-xl 
+      text-white 
+      border-gray-100
+      border-2 tracking-widest"
+    >
+      Gogreentech - din partner i systemydelser
+    </div>
+
+    <app-landing-page-desktop
+      id="home"
+      class="bg-gray-100"
+    ></app-landing-page-desktop>
     <app-property-owner id="property-owner"></app-property-owner>
     <app-installers id="installers" class="bg-gray-100"></app-installers>
     <app-footer></app-footer>

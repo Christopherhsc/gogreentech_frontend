@@ -14,7 +14,7 @@ export class landingPageData {
       },
       {
         src: '/assets/card_4.jpg',
-        text: 'Ny aftale i Nyråd',
+        text: 'Ny aftale i Nysted',
       },
       {
         src: '/assets/card_5.jpg',

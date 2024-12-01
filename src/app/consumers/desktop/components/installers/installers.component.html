@@ -1,6 +1,6 @@
-<div class="installers flex h-screen">
+<div class="installers flex my-12">
   <div
-    class="mx-auto flex h-full w-11/12 flex-col justify-around text-white 2xl:w-3/5"
+    class="mx-auto flex w-11/12 flex-col justify-around text-white 2xl:w-3/5"
   >
     <!-- Image Card Grid Section -->
     <div class="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="border-l-2 border-primary-color pl-6 text-black">
+    <div class="border-l-2 border-primary-color pl-6 text-black mt-24">
       <p class="text-left">
         Grøn Energi for en Bæredygtig Fremtid – Sammen kan vi Løse
         Udfordringerne Hos Gogreentech arbejder vi for at sikre elnettets
@@ -37,7 +37,7 @@
       </p>
     </div>
 
-    <div class="mx-auto block h-12">
+    <div class="mx-auto block h-12 my-12">
       <button
         class="mx-auto w-auto rounded-lg border-2 border-primary-color p-2 text-black transition-all duration-300 hover:bg-primary-color"
         (click)="openContactModal()"
@@ -46,7 +46,7 @@
       </button>
     </div>
 
-    <div class="flex w-full flex-row flex-wrap justify-between 2xl:space-x-4">
+    <div class="flex w-full flex-row flex-wrap justify-between 2xl:space-x-4 my-12">
       <div *ngFor="let section of sections" class="flex w-5/12">
         <div class="w-full">
           <p class="text-title">{{ section.title }}</p>

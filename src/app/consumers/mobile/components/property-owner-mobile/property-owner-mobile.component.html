@@ -11,7 +11,7 @@
         (click)="section.haveButton ? toggleText() : null"
       >
         <div class="flex items-center justify-between">
-          <h3 class="text-title font-bold">{{ section.title }}</h3>
+          <h3 class=" font-bold">{{ section.title }}</h3>
           <span *ngIf="section.haveButton" class="arrow text-title">
             <span *ngIf="!showText"> &#9660;</span>
             <span *ngIf="showText"> &#9650;</span>
