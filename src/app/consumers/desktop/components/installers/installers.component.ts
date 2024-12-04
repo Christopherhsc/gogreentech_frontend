@@ -4,7 +4,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ContactModalComponent } from '../../../../shared/components/contact-modal/contact-modal.component';
 import { InstallersData } from './installers-data';
-import { ResponsiveService } from '../../../../shared/services/responsive.service';
 
 @Component({
   selector: 'app-installers',
@@ -26,14 +25,7 @@ export class InstallersComponent implements AfterViewInit {
     { title: 'Som ejendomsejer:', content: this.ownerText },
   ];
 
-  constructor(
-    public dialog: MatDialog,
-    private responsiveService: ResponsiveService
-  ) {
-    this.responsiveService.isMobile$.subscribe((isMobile) => {
-      this.isMobile = isMobile;
-    });
-  }
+  constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -49,7 +41,7 @@ export class InstallersComponent implements AfterViewInit {
         },
         {
           threshold: 0.1,
-        }
+        },
       );
 
       imageElements.forEach((element) => observer.observe(element));

@@ -1,35 +1,40 @@
 <footer
-  class="flex h-20 flex-row items-center justify-between bg-gray-700 px-12 text-white"
+  class="flex flex-col items-center justify-center bg-gray-700 px-4 py-8 text-white sm:flex-row sm:h-44 sm:items-start sm:justify-between sm:px-12"
 >
-  <div class="flex-col">
+  <!-- Address Section -->
+  <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
     <p>Gogreentech A/S</p>
     <p>Møllehaven 7</p>
     <p>DK - 4040 Jyllinge</p>
   </div>
-  <div class="flex flex-col text-left">
-    <p>kontakt</p>
-    <div class="flex flex-row  space-x-2">
-      <mat-icon>phone</mat-icon>
-      <a href="tel:+4525209010" class="hover:underline">+45 25 20 90 10</a>
+
+  <!-- Contact Section -->
+  <div class="mt-4 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left">
+    <p class="font-bold">Kontakt</p>
+    <div class="flex items-center space-x-2">
+      <mat-icon class="h-5 w-5">phone</mat-icon>
+      <a href="tel:+4525209010" class="hover:underline text-sm">+45 25 20 90 10</a>
     </div>
-    <div class="flex flex-row  space-x-2">
-      <mat-icon>mail</mat-icon
-      ><a href="mailto:kontakt@gogreentech.dk" class="hover:underline"
-        >kontakt&#64;gogreentech.dk</a
-      >
+    <div class="flex items-center space-x-2">
+      <mat-icon class="h-5 w-5">mail</mat-icon>
+      <a href="mailto:kontakt@gogreentech.dk" class="hover:underline text-sm">
+        kontakt&#64;gogreentech.dk
+      </a>
     </div>
   </div>
-  <div class="flex h-full flex-row justify-between">
-    <div id="logo" class="gogreentech-logo flex flex-row items-center">
-      <img
-        class="z-40 h-16 w-auto"
-        src="/assets/gogreentech_logo.png"
-        alt="logo"
-      />
-      <div class="flex flex-col pl-4 text-primary-color">
-        <p class="text-2xl font-extrabold">GoGreenTech</p>
-        <p class="text-sm font-bold text-white">TECH FOR THE CLIMATE</p>
-      </div>
+
+  <!-- Logo Section -->
+  <div
+    class="mt-4 flex flex-col items-center sm:mt-0 sm:flex-row sm:items-center sm:h-full"
+  >
+    <img
+      class="h-12 w-auto"
+      src="/assets/gogreentech_logo.png"
+      alt="logo"
+    />
+    <div class="mt-2 flex flex-col items-center sm:mt-0 sm:pl-4 sm:items-start">
+      <p class="font-extrabold text-primary-color">GoGreenTech</p>
+      <p class="text-sm font-bold text-white">TECH FOR THE CLIMATE</p>
     </div>
   </div>
 </footer>

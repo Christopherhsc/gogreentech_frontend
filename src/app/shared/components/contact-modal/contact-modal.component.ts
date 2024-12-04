@@ -7,7 +7,6 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { ResponsiveService } from '../../services/responsive.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -38,16 +37,9 @@ import { MatIconModule } from '@angular/material/icon';
 export class ContactModalComponent implements OnInit {
   isMobile!: boolean;
 
-  constructor(
-    public dialogRef: MatDialogRef<ContactModalComponent>,
-    private responsiveService: ResponsiveService,
-  ) {}
+  constructor(public dialogRef: MatDialogRef<ContactModalComponent>) {}
 
-  ngOnInit(): void {
-    this.responsiveService.isMobile$.subscribe((isMobile) => {
-      this.isMobile = isMobile;
-    });
-  }
+  ngOnInit(): void {}
 
   closeModal(): void {
     this.dialogRef.close();

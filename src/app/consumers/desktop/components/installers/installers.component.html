@@ -1,9 +1,9 @@
-<div class="installers flex my-12">
+<div class="installers flex w-11/12 mx-auto h-auto">
   <div
-    class="mx-auto flex w-11/12 flex-col justify-around text-white 2xl:w-3/5"
+    class=" flex  flex-col  text-white"
   >
     <!-- Image Card Grid Section -->
-    <div class="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
+    <div class="grid w-full grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3">
       <div
         *ngFor="let image of images; let i = index"
         class="fade-in group relative h-64 w-full overflow-hidden rounded-lg"
@@ -46,7 +46,7 @@
       </button>
     </div>
 
-    <div class="flex w-full flex-row flex-wrap justify-between 2xl:space-x-4 my-12">
+    <div class="flex w-full flex-col lg:flex-row flex-wrap gap-y-12 lg:justify-between">
       <div *ngFor="let section of sections" class="flex w-5/12">
         <div class="w-full">
           <p class="text-title">{{ section.title }}</p>

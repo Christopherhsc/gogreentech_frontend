@@ -1,4 +1,8 @@
 
 .overlay-iframe {
     border-radius: 10px;
+    max-width: 600px;
+    max-height: 400px;
+    width: 100%; // Make it responsive
 }
+

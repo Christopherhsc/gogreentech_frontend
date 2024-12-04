@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ResponsiveService } from '../../services/responsive.service';
 import { ContactModalComponent } from '../contact-modal/contact-modal.component';
-import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatIconModule],
+  imports: [CommonModule, MatIcon],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -20,47 +20,40 @@ export class HeaderComponent implements OnInit {
   showNav2: boolean = false;
   showNav3: boolean = false;
 
-  constructor(
-    private responsiveService: ResponsiveService,
-    public dialog: MatDialog,
-  ) {}
+  constructor(public dialog: MatDialog, private responsiveService: ResponsiveService) {}
 
   ngOnInit(): void {
     this.responsiveService.isMobile$.subscribe((isMobile) => {
       this.isMobile = isMobile;
     });
 
-    // Old logic: Trigger the fade-in effect for all buttons after a small delay
     setTimeout(() => {
       this.showButtons = true;
     }, 200);
 
-    // New logic: Trigger the fade-in animation one by one with a delay
     setTimeout(() => {
       this.showNav1 = true;
-    }, 200); // Fade in the first item
+    }, 200);
 
     setTimeout(() => {
       this.showNav2 = true;
-    }, 1200); // Fade in the second item after 1s delay
+    }, 1200);
 
     setTimeout(() => {
       this.showNav3 = true;
-    }, 2200); // Fade in the third item after another 1s delay
+    }, 2200);
   }
 
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        this.isOverlayVisible = false;
-      }, 700);
+      this.isOverlayVisible = false; // Close overlay after navigation
     }
   }
 
-  toggleOverlay() {
-    this.isOverlayVisible = !this.isOverlayVisible;
+  toggleOverlay(): void {
+    this.isOverlayVisible = !this.isOverlayVisible; // Toggle overlay visibility
   }
 
   openContactModal(): void {

@@ -1,54 +1,20 @@
 <!-- Desktop Layout -->
-<ng-container *ngIf="!(isMobile$ | async); else mobileLayout">
+<div
+  class="relative m-auto flex flex-col justify-center bg-gray-100 xl:w-screen 4xl:w-3/5"
+>
+  <app-header></app-header>
   <div
-    class="relative m-auto flex flex-col justify-center bg-gray-100 xl:w-screen 4xl:w-3/5"
+  class="relative inset-1/2 z-50 flex h-16 max-w-[550px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-2xl border-2 border-gray-100 bg-primary-color px-4 py-2 text-center text-xl font-bold tracking-widest text-white"
   >
-    <app-header></app-header>
-    <div
-      class="
-      relative 
-      inset-1/2 
-      z-50 flex 
-      h-16 
-      w-[550px] 
-      -translate-x-1/2 
-      -translate-y-1/2 
-      transform 
-      items-center 
-      justify-center 
-      rounded-2xl 
-      bg-primary-color 
-      px-4 
-      py-2 
-      text-center 
-      font-bold 
-      text-xl 
-      text-white 
-      border-gray-100
-      border-2 tracking-widest"
-    >
-      Gogreentech - din partner i systemydelser
-    </div>
-
+  Gogreentech - din partner i systemydelser
+</div>
+<div class="h-auto px-6 lg:px-14 xl:px-28 py-16">
     <app-landing-page-desktop
       id="home"
       class="bg-gray-100"
     ></app-landing-page-desktop>
     <app-property-owner id="property-owner"></app-property-owner>
     <app-installers id="installers" class="bg-gray-100"></app-installers>
-    <app-footer></app-footer>
   </div>
-</ng-container>
-
-<!-- Mobile Layout -->
-<ng-template #mobileLayout>
-  <app-header></app-header>
-  <app-landing-page-mobile
-    class="flex-grow"
-    id="home"
-  ></app-landing-page-mobile>
-  <ng-container>
-    <app-property-owner-mobile id="property-owner"></app-property-owner-mobile>
-    <app-installers-mobile id="installers"></app-installers-mobile>
-  </ng-container>
-</ng-template>
+  <app-footer></app-footer>
+</div>

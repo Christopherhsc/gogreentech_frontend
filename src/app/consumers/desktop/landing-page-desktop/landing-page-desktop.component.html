@@ -1,7 +1,7 @@
-<div
-  class="min-h-auto mx-4 flex w-full flex-col items-center justify-start my-12"
->
-  <div class="w-11/12 flex-col justify-around  2xl:w-3/5 border-l-2 border-primary-color pl-6 mb-12">
+<div class="flex flex-col items-center justify-start">
+  <div
+    class="mb-16 w-10/12 flex-row border-l-2 border-primary-color pl-6"
+  >
     <p>
       Hos Gogreentech arbejder vi med at levere avancerede systemydelser til
       Energinet, som er afgørende for at sikre stabilitet og balance i det
@@ -11,30 +11,28 @@
     </p>
   </div>
   <!-- TOP ROW WITH 2 ELEMENTS CENTERED -->
-  <div class="mb-24 flex w-full flex-row items-center justify-center gap-52">
+  <div
+    class="my-16 flex w-full flex-col justify-center items-center lg:flex-row lg:justify-around"
+  >
     <!-- FIRST ELEMENT (YouTube Iframe) -->
-    <div>
+    <div class="h-[230px]">
       <iframe
         class="overlay-iframe rounded-sm"
-        width="400"
-        height="190"
         src="https://www.youtube.com/embed/GSQvvKCKq4k?autoplay=1"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <p class="mt-6">
+      <p class="">
         Denne video fra Energinet forklarer <br />
         hvorfor systemydelser er så vigtige for samfundet
       </p>
     </div>
     <!-- SECOND ELEMENT (Image and Text Block) -->
-    <div
-      class="flex h-[280px] w-[400px] flex-col items-center justify-between p-4"
-    >
+    <div class="flex max-h-[280px] max-w-[400px] flex-col items-center">
       <!-- Image Section -->
-      <div class="mb-4">
+      <div class="">
         <img
           [src]="data.details.image"
           alt="Details Image"
@@ -50,14 +48,14 @@
 
   <!-- GRID CONTENT CENTERED BELOW -->
   <div
-    class="mx-auto grid w-3/4 grid-cols-2 justify-items-center gap-x-8 gap-y-12 p-12 text-center"
+    class="my-16 grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-x-64 gap-y-32 text-center"
   >
     <div
       *ngFor="let section of data.grid"
-      class="flex h-full w-4/5 flex-col items-center text-center text-black"
+      class="flex h-full flex-col items-center text-center text-black"
     >
       <p class="text-title font-semibold">{{ section.title }}</p>
-      <p class="mb-4">{{ section.description }}</p>
+      <p class="mb-4 max-w-[400px]">{{ section.description }}</p>
       <ul>
         <li *ngFor="let item of section.items">{{ item }}</li>
       </ul>
